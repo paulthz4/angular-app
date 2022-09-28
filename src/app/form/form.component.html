@@ -1,0 +1,3 @@
+<input type="text" class="form-control" [(ngModel)]="username" (input)="inputChange()">
+<p>{{getUsername()}}</p>
+<button class="btn btn-secondary" (click)="reset()" [disabled]="emptyUsername">Reset</button>
