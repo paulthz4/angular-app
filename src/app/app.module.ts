@@ -3,32 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { HeaderComponent } from './header/header.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { DropdownDirective } from './shared/dropdown.directive';
-
+import { NewAccountComponent } from './new-account/new-account.component';
+import { AccountComponent } from './account/account.component';
+import { AccountService } from './account.service';
+import { LoggingService } from './loggin.service';
 @NgModule({
   declarations: [
     AppComponent,
-    RecipesComponent,
-    RecipeDetailComponent,
-    RecipeListComponent,
-    RecipeItemComponent,
-    HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    DropdownDirective
+    NewAccountComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AccountService, LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
