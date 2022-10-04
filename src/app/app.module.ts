@@ -3,21 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { NewAccountComponent } from './new-account/new-account.component';
-import { AccountComponent } from './account/account.component';
-import { AccountService } from './account.service';
-import { LoggingService } from './loggin.service';
+import { ActiveUsersComponent } from './active-users/active-users.component';
+import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
+import { UsersService } from './shared/users.service';
+import { CounterService } from './shared/counter-service.service';
 @NgModule({
   declarations: [
     AppComponent,
-    NewAccountComponent,
-    AccountComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [AccountService, LoggingService],
+  providers: [UsersService, CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
