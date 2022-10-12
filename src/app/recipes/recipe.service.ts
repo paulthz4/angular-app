@@ -1,10 +1,13 @@
 import { EventEmitter, Injectable } from "@angular/core";
+import { Subject } from "rxjs";
 import { Ingredient } from "../shared/ingredient.model";
 import { ShoppingListService } from "../shopping-list/shopping-list.service";
 import { Recipe} from "./recipe.model";
 
 @Injectable()
 export class RecipeService{
+  // recipeSelected = new Subject<Recipe>();
+
   private recipes: Recipe[] = [
     new Recipe('Schnitzel', 'yummy german food.', 
     'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cold-spiced-chicken-recipe-1557951578.jpg?crop=1xw:1xh;center,top&resize=480:*',
@@ -23,7 +26,7 @@ export class RecipeService{
   
   constructor(private slService: ShoppingListService){}
   
-  recipeSelected = new EventEmitter<Recipe>();
+  
   
   getRecipes(){
     return this.recipes.slice();
